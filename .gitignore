@@ -2,6 +2,6 @@
 .metadata
 .sonarlint
 .recommenders
-.*/
 RemoteSystemsTempFiles
 Servers/
+HelloWorldXml/target
