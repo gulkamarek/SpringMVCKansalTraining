@@ -1,4 +1,7 @@
 ~* 
 .metadata
 .sonarlint
+.recommenders
+.*/
 RemoteSystemsTempFiles
+Servers/

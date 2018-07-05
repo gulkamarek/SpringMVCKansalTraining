@@ -13,13 +13,13 @@
 	<!-- the schema might be found in the cods in the jar/docs/spring-framework-reference/html/ -->
 
 	<!-- define location where to scan for components -->
-	<context:component-scan base-package="org.graysalmon.controller"/>
+	<context:component-scan base-package="org.greysalmon.controller"/>
 	
 	<!-- to define that the components are annotation driven -->
 	<mvc:annotation-driven/>
 
 	<bean
-		class="org.springframework.web.servlet.view.InternalResourceVeiwResolwer">
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/WEB-INF/views/</value>
 		</property>
