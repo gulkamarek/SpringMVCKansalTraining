@@ -14,6 +14,14 @@ public class Userr {
 	private String lName;
 	private String email;
 	private String mobile;
+	
+	
+	public Long getUserrId() {
+		return userrId;
+	}
+	public void setUserrId(Long userrId) {
+		this.userrId = userrId;
+	}
 	public String getfName() {
 		return fName;
 	}

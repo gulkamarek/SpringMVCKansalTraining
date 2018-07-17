@@ -23,6 +23,8 @@
 	<!-- define location where to scan for components -->
 	<context:component-scan base-package="org.greysalmon.controller" />
 	<context:component-scan base-package="org.greysalmon.model" />
+	<context:component-scan base-package="org.greysalmon.dao.impl" />
+	<context:component-scan base-package="org.greysalmon.service.impl" />
 
 	<!-- to define that the components are annotation driven -->
 	<mvc:annotation-driven />
