@@ -38,7 +38,7 @@
 	</bean>
 
 
-
+    <context:property-placeholder location="classpath:database.properties"/>
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${database.driver}" />
@@ -52,7 +52,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>org.greysalmon.model.User</value>
+				<value>org.greysalmon.model.Userr</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

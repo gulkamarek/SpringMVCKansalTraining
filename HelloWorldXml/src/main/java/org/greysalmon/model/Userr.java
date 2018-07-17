@@ -1,11 +1,15 @@
 package org.greysalmon.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
-public class User {
+public class Userr {
 	
-	private Long id; // primary key in db
+	@Id
+	@GeneratedValue
+	private Long userrId; // primary key in db, it will be auto generated
 	private String fName;
 	private String lName;
 	private String email;
