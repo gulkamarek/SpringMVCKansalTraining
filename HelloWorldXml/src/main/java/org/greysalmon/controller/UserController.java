@@ -56,4 +56,10 @@ public class UserController {
 
 		return "user/details";
 	}
+	
+	@RequestMapping(value="/list", method= RequestMethod.GET)
+	public String list(Map<String, Object> map){
+		map.put("userrList", userrService.getAll());
+		return "user/list";
+	}
 }
