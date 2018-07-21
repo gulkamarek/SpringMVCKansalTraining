@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	<spring:url value="/register/" var="register" />
+	<spring:url value="/user/register/" var="register" />
 	<a href="${register}">Register</a>
 	<c:if test="${!empty userrList}">
 		<table>
@@ -22,6 +22,7 @@
 				<th>Last Name</th>
 				<th>Email</th>
 				<th>Mobile</th>
+				<th>Settings</th>
 			</tr>
 			<c:forEach items="${userrList}" var="userr">
 				<tr>
@@ -30,6 +31,11 @@
 					<td><c:out value="${userr.lName}" /></td>
 					<td><c:out value="${userr.email}" /></td>
 					<td><c:out value="${userr.mobile}" /></td>
+					<td>
+						<a href="<c:url value='/user/edit/${userr.userrId}' />">Edit</a>
+						<a href="<c:url value='/user/details/${userr.userrId}' />">Details</a>
+					</td>
+					
 				</tr>
 			</c:forEach>
 		</table>

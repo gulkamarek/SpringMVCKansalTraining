@@ -11,47 +11,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>User registration form</h3>
-		<!-- after clicking on the submit button the data from the form is 
-		handed over to the controller that matches the request mapping from
-	 	the action, this method will add data to the model and pass it to 
-	 	another jsp that displays it -->
-	<!-- normal html form
-	<form method="post" action="/HelloWorldXml/user/details">
-		<table>
-			<tr>
-				<td>First Name :</td>
-				<td><input type="text" name="fName" /></td>
-			</tr>
-			<tr>
-				<td>Last Name:</td>
-				<td><input type="text" name="lName" /></td>
-			</tr>
-			<tr>
-				<td>Email :</td>
-				<td><input type="text" name="email" /></td>
-			</tr>
-			<tr>
-				<td>Mobile :</td>
-				<td><input type="text" name="mobile" /></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="Add User"></td>
-			</tr>
-		</table>
-	</form>
-	-->
-	<!-- Spring form -->
+	<h3>User edit form</h3>
+	<spring:url value="/user/list" var="list"/>
+	<a href="${list}" >User List</a>
 	
-	<!-- URL variable with the name of the handler, because we want to pass it to the handler -->
-	<c:url var="action" value="/user/create"/>
+	<!-- this is sending the data to the URL:"update" that correspond to the handler request mapping responsible for   -->
+	<c:url var="action" value="/user/update"/>
 	
-	<!-- userr is the form backing object -->
+	<!-- model attribute is accessing to the mode (the map to which in the controller a key and the value were inserted) -->
 	<form:form method="post" action="${action}" modelAttribute="userr">
 		<table>
 			<tr>
 				<!-- path = name of the userr's property -->
-				<td><form:label path="fName">First Name</form:label></td>
+				<td>
+					<form:hidden path="userrId"/>
+					<form:label path="fName">First Name</form:label>
+				</td>
 				<td><form:input path="fName" /></td>
 			</tr>
 			<tr>

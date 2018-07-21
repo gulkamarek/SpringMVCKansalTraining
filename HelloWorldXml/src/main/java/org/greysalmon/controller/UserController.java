@@ -20,6 +20,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String register(Map<String, Object> map) {
+		// the map object is used to prepare the model, that will be passed to the view.
 		// map.put("title", "User Registration");
 
 		// the data that will be created in the form should be back-up be the
@@ -61,5 +62,20 @@ public class UserController {
 	public String list(Map<String, Object> map){
 		map.put("userrList", userrService.getAll());
 		return "user/list";
+	}
+	
+	// this method is used to populate the form with the properties of the user to be edited
+	@RequestMapping(value="/edit/{userrId}", method=RequestMethod.GET)
+	public String edit(@PathVariable("userrId") Long userrId, Map<String, Object> map){
+		Userr userr = userrService.find(userrId);
+		map.put("userr", userr);
+		return "user/edit";
+	}
+	
+	// handler for updating the user, it gets as an argument the user object form the form edit.jsp
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public String update(Userr userr, Map<String, Object> map) {
+		userrService.update(userr);
+		return "redirect:/user/details/" + userr.getUserrId();
 	}
 }
