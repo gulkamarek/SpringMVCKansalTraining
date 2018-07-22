@@ -3,6 +3,9 @@ package org.greysalmon.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
 
 @Entity
 public class Userr {
@@ -10,9 +13,17 @@ public class Userr {
 	@Id
 	@GeneratedValue
 	private Long userrId; // primary key in db, it will be auto generated
+	
+	@Size(min=2, max=50)
 	private String fName;
+
+	@Size(min=2, max=50)
 	private String lName;
-	private String email;
+	
+	@Email
+	private String email;	
+	
+	@Size(min=6, max=20)
 	private String mobile;
 	
 	

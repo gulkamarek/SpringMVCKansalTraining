@@ -47,7 +47,8 @@ public class UserrDaoImpl implements UserrDao {
 
 	@Override
 	public void delete(Long userrId) {
-		currentSession().delete(userrId);
+		// currentSession().delete(userrId); // this didn't work
+		currentSession().delete(find(userrId));
 	}
 
 	@Override

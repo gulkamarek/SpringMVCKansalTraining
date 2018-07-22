@@ -34,6 +34,7 @@
 					<td>
 						<a href="<c:url value='/user/edit/${userr.userrId}' />">Edit</a>
 						<a href="<c:url value='/user/details/${userr.userrId}' />">Details</a>
+						<a href="<c:url value='/user/delete/${userr.userrId}' />">Delete</a>
 					</td>
 					
 				</tr>

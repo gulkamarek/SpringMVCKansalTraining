@@ -42,7 +42,7 @@
 				<td><form:input path="mobile" /></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="Add User"></td>
+				<td colspan="2"><input type="submit" value="Save changes"></td>
 			</tr>
 		</table>
 	</form:form>
